@@ -1,0 +1,13 @@
+<h3>以下の内容で送信する。</h3>
+
+<%= form_with(model: @voice, url: voices_path, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+  
+  <p>本文：<%= @voice.content %></p>
+  <%= form.submit "登録する" %>
+ <% end %>
+ 
+ <%= form_with(model: @voice, url: new_voice_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.submit "戻る", name: 'back' %>
+  <% end %>
