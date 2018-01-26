@@ -1,3 +1,4 @@
+<div class="index">
 <%= form_with(model: @voice, local: true, url: choose_new_or_edit ) do |form| %>
   <% if @voice.errors.any? %>
   <div id="error_explanation">
@@ -11,11 +12,14 @@
   </div>
   <% end %>
   
-    <div class="voice_title">
-        <%= form.label :つぶやき %>
+    <div class="index">
+        <%= form.label :つぶやきスペース %>
         <%= form.text_field :content %>
     </div>
-    <%= form.submit %>
+    <%= form.submit "つぶやき送信" %>
 <% end %>
 
+
 <%= link_to '一覧へ戻る', voices_path %>
+<p>
+</div>

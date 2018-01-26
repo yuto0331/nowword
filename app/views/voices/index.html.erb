@@ -1,22 +1,23 @@
-<h1>一覧表示</h1>
+<div class="index">
+<h2>一覧</h2>
 
-<table>
+<table class="table">
     <tr>
         <th>内容</th>
     </tr>
     
     <% @voices.each do |voice| %>
-    <tr>
-        <td><%= voice.content %></td>
-        
-        <td><%= link_to '投稿を確認する', voice_path(voice.id) %></td>
-        <td><%= link_to '編集', edit_voice_path(voice.id) %></td>
-        <td><%= link_to '削除', voice_path(voice.id), method: :delete , data: { confirm: '削除していいですか？' } %></td>
-
-    </tr>
-<% end %>
+      <tr>
+        <td class="btn_content"><%= voice.content %></td>
+        <td class="btn"><%= link_to '確認', voice_path(voice.id) %></td>
+        <td class="btn_edit"><%= link_to '編集', edit_voice_path(voice.id) %></td>
+        <td class="btn_delete"><%= link_to '削除', voice_path(voice.id), method: :delete , data: { confirm: '削除していいですか？' } %></td>
+      </tr>
+    <% end %>
 </table>
 
-<br>
+<p>
 <%= link_to '投稿', new_voice_path %>
 <%= link_to '一覧へ戻る', voices_path %>
+</p>
+</div>

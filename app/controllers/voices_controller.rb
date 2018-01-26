@@ -1,5 +1,10 @@
 class VoicesController < ApplicationController
+    layout 'application'
     def index
+        # @header = 'TOP'
+        # @footer = 
+        # @msg = '一覧'
+        
         @voices = Voice.all
     end
     
